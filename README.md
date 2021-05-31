@@ -80,3 +80,21 @@ Translations are periodically pulled from Transifex and merged into the git repo
 
 **Important**: We do not accept translation changes as GitHub pull requests because the next
 pull from Transifex would automatically overwrite them again.
+
+
+### How to encrypt with openssl
+```bash
+tar cvf file.tar <directory-name>
+openssl aes256 -salt -in file.tar -out file.out.aes256
+```
+
+### How to decrypt with openssl
+```bash
+openssl aes256 -d -salt -in file.out.aes256 -out file.tar
+tar xvf file.tar
+```
+
+
+
+
+
